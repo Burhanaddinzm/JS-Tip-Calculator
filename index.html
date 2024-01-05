@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top -->
+      <div class="top">
+        <!-- Tip -->
+        <div class="text-container">
+          <div class="tip-container">
+            <h3>TIP:</h3>
+            <span>/ Person</span>
+          </div>
+          <h2 id="tip-result">$15.0</h2>
+        </div>
+        <!-- Total -->
+        <div class="text-container">
+          <div class="total-container">
+            <h3>Total:</h3>
+            <span>/ Person</span>
+          </div>
+          <h2 id="total-result">$165.0</h2>
+        </div>
+      </div>
+      <!-- Bottom -->
+      <div class="bottom">
+        <!-- Bill -->
+        <div class="wrapper">
+          <h4>Bill</h4>
+          <div class="bill-container">
+            <span id="bill">300.00</span>
+          </div>
+        </div>
+        <!-- Tip -->
+        <div class="wrapper">
+          <h4>Tip</h4>
+          <div class="tip-container">
+            <button id="tip-decrease">
+              <img src="./assets/icons/remove.svg" alt="decrease" />
+            </button>
+            <span id="tip">10%</span>
+            <button id="tip-increase">
+              <img src="./assets/icons/add.svg" alt="increase" />
+            </button>
+          </div>
+        </div>
+        <!-- No. of People -->
+        <div class="wrapper">
+          <h4>No. of People</h4>
+          <div class="no-container">
+            <button id="num-decrease">
+              <img src="./assets/icons/remove.svg" alt="decrease" />
+            </button>
+            <span id="num">2</span>
+            <button id="num-increase">
+              <img src="./assets/icons/add.svg" alt="increase" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
