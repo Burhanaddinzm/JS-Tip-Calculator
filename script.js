@@ -15,31 +15,29 @@ const numEl = document.getElementById("num");
 
 const billInput = +prompt("Please enter your bill");
 
-let tipPercent = 0.05;
+let tipPercent = 5;
 let numberOfPeople = 1;
 
 billEl.textContent = billInput.toString() + ".00";
 
 const calculateTip = (bill, tipP, numP) => {
-  const tip = bill * tipP;
+  const tip = (bill * tipP) / 100;
 
   totalResult.textContent = `$${Math.floor((bill + tip) / numP)}.0`;
   tipResult.textContent = `$${Math.floor(tip / numP)}.0`;
-  tipEl.textContent = `${Math.floor(tipP * 100)}%`;
+  tipEl.textContent = `${tipP}%`;
   numEl.textContent = numP.toString();
 };
 
 tipDecrease.addEventListener("click", () => {
-  if (tipPercent > 0.09 && tipPercent < 1.2)
-    Math.round(parseInt((tipPercent -= 0.05).toFixed(2)));
+  if (tipPercent > 5 && tipPercent <= 100) tipPercent -= 5;
   else tipPercent = 0;
   calculateTip(billInput, tipPercent, numberOfPeople);
 });
 
 tipIncrease.addEventListener("click", () => {
-  if (tipPercent > -2 && tipPercent < 1)
-    Math.round(parseInt((tipPercent += 0.05).toFixed(2)));
-  else tipPercent = 1;
+  if (tipPercent >= 0 && tipPercent < 95) tipPercent += 5;
+  else tipPercent = 100;
   calculateTip(billInput, tipPercent, numberOfPeople);
 });
 
